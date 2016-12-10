@@ -4,21 +4,22 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { AuthorsModel } from '../../models/authors.model';
+import { CONFIG } from '../config';
+
+let urls = CONFIG.baseUrls.authors;
 
 @Injectable()
 export class AuthorsService {
-  allAuthors:string = 'api/authors.json';
-  authorById:string = 'api/authorsById.json';
 
   constructor(private _http: Http) { }
 
-  getAuthors(): Observable<AuthorsModel>{
-    return this._http.get(this.allAuthors)
+  getAuthors(): Observable<AuthorsModel[]>{
+    return this._http.get(urls.allAuthors)
     .map((resp: Response) => resp.json());
   }
 
   getAuthorById(id: number): Observable<AuthorsModel>{
-    return this._http.get(this.authorById)
+    return this._http.get(`${urls.authorById}/${id}`)
     .map((resp: Response) => resp.json());
   }
 }

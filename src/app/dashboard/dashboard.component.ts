@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this._authorsService.getAuthors().subscribe(
       response => {
-        this.authors = response['data'];
+        this.authors = response;
       } 
     );
   }

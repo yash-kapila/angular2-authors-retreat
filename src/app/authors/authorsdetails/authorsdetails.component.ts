@@ -26,7 +26,9 @@ export class AuthorsdetailsComponent implements OnInit {
 
     this._authorsService.getAuthorById(id).subscribe(
       data => {
+        console.log(data);
         this.author = data;
+        console.log(this.author);
         this.createAuthorCopyObject();
       }
     )
