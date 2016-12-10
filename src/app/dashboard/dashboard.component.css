@@ -1,0 +1,18 @@
+.center{
+    text-align: center;
+}
+
+.dashboard-header{
+    margin-bottom: 30px;
+}
+
+.authors-list{
+    margin: 10px 0;
+}
+
+.authors-tile{
+    padding: 30px 0;
+    background-color: #F4F3F0;
+    color: #2D373E;
+    border: 1px solid #EFEDE9;
+}
