@@ -1,0 +1,14 @@
+.navtabs-container{
+    padding: 20px 0;
+    background-color: #575F65;
+}
+
+.navtabs-row{
+    margin-top: 10px;
+}
+
+.navtabs-list-items{
+    color: #F9F9F8;
+    text-decoration: none;
+    font-size: 16px;
+}
