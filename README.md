@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Backend End Development server
 Run `node server.js` for a Node server running at `http://localhost:8080/`. `proxy.conf.json` contains instruction for front end server to redirect all '/api' requests to port 8080.
 
-## Databse Mongo DB server
+## Database Mongo DB
 Download MongoDB for OS. Follow the instructions for setup. DB server will be running at `localhost:27017`.
 
 ## Code scaffolding
