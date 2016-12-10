@@ -2,8 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.21.
 
-## Development server
+## Front End Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Backend End Development server
+Run `node server.js` for a Node server running at `http://localhost:8080/`. `proxy.conf.json` contains instruction for front end server to redirect all '/api' requsets to port 8080.
+
+## Databse Mongo DB server
+Download MongoDB for OS. Follow the instructions for setup. DB server will be running at `localhost:27017`.
 
 ## Code scaffolding
 
