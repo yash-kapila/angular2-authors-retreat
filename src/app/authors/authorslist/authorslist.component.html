@@ -5,7 +5,7 @@
 
   <div class="author-list-body">
     <div class="author-list-add-btn">
-      <button class="btn btn-default" (click)="addRecord()"> 
+      <button class="btn btn-default" (click)="addNewAuthor()"> 
         ADD
       </button>
     </div>
@@ -14,7 +14,7 @@
         <span class="author-list-tile-text">
           {{ author.name }}
         </span>
-        <span class="author-list-tile-icon" (click)="addNewAuthor()">
+        <span class="author-list-tile-icon" (click)="goToAuthorDetails(author)">
           <i class="glyphicon glyphicon-play-circle"></i>
         </span>
       </div>

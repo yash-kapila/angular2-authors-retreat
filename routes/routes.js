@@ -48,11 +48,11 @@ router.post('/author/new', function(req, res){
     })
 })
 
-router.delete('/author/delete', function(req, res){
+router.delete('/author/delete/:id', function(req, res){
     var author = new Authors({
-        id: req.body.id
+        id: req.params.id
     });
-
+    
     author.deleteAuthor(function(err, record){
        if(err) res.status(500).json("Error while deleting author record");
        else{

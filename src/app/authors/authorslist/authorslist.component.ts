@@ -20,13 +20,17 @@ export class AuthorslistComponent implements OnInit {
   ngOnInit() {
     this._authorsService.getAuthors().subscribe(
       response => {
-        this.authors = response['data'];
+        this.authors = response;
       }
     )
   }
 
   addNewAuthor(): void{
-    this._router.navigate['/authors', 'new'];
+    this._router.navigate(['/authors', 'new']);
+  }
+
+  goToAuthorDetails(author): void{
+    this._router.navigate(['/authors', author.id]);
   }
 
 }

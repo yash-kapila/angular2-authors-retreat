@@ -16,12 +16,12 @@ const routes: Routes = [
         component: AuthorslistComponent
       },
       {
-        path: ':id',
-        component: AuthorsdetailsComponent
-      },
-      {
         path: 'new',
         component: NewauthorComponent
+      },
+      {
+        path: ':id',
+        component: AuthorsdetailsComponent
       }
     ] 
   }

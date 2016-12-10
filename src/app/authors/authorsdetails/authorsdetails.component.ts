@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthorsService } from '../../core/services/authors.service';
 import { AuthorsModel } from '../../models/authors.model';
@@ -15,7 +15,8 @@ export class AuthorsdetailsComponent implements OnInit {
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _authorsService: AuthorsService
+    private _authorsService: AuthorsService,
+    private _router: Router
   ) {
     // initialize this.author otherwise template ngModel would throw error
     this.author = new AuthorsModel();
@@ -26,15 +27,13 @@ export class AuthorsdetailsComponent implements OnInit {
 
     this._authorsService.getAuthorById(id).subscribe(
       data => {
-        console.log(data);
         this.author = data;
-        console.log(this.author);
         this.createAuthorCopyObject();
       }
     )
   }
 
-  cancelChanges(): void{
+  cancel(): void{
     this.author = this.authorCopy;
     this.createAuthorCopyObject();
   }
@@ -43,12 +42,17 @@ export class AuthorsdetailsComponent implements OnInit {
     this.authorCopy = Object.assign({}, this.author);
   }
 
-  saveChanges(): void{
+  save(): void{
 
   }
 
-  deleteRecord(): void{
-    
+  delete(): void{
+    this._authorsService.deleteAuthor(this.author.id).subscribe(
+      data => {
+        console.log(data);
+        this._router.navigate(['/authors']);
+      }
+    )
   }
 
 }

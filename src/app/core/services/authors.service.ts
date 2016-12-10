@@ -22,4 +22,14 @@ export class AuthorsService {
     return this._http.get(`${urls.authorById}/${id}`)
     .map((resp: Response) => resp.json());
   }
+
+  saveNewAuthor(author): Observable<AuthorsModel>{
+    return this._http.post(urls.newAuthor, author)
+    .map((resp: Response) => resp.json());
+  }
+
+  deleteAuthor(id: number): Observable<Response>{
+    return this._http.delete(`${urls.deleteAuthor}/${id}`)
+    .map((resp: Response) => resp.json());
+  }
 }
