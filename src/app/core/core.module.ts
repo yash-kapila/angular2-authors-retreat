@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { NavtabsComponent } from './navtabs/navtabs.component';
 import { AuthorsService } from './services/authors.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -13,13 +14,15 @@ import { AuthorsService } from './services/authors.service';
     HttpModule
   ],
   declarations: [
-    NavtabsComponent
+    NavtabsComponent,
+    ModalComponent
   ],
   providers:[
     AuthorsService
   ],
   exports: [   
-    NavtabsComponent
+    NavtabsComponent,
+    ModalComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule { } 
