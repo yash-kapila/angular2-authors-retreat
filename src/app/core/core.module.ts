@@ -4,8 +4,9 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { NavtabsComponent } from './navtabs/navtabs.component';
-import { AuthorsService } from './services/authors.service';
 import { ModalComponent } from './modal/modal.component';
+import { AuthorsService } from './services/authors.service';
+import { BooksService } from './services/books.service';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ModalComponent } from './modal/modal.component';
     ModalComponent
   ],
   providers:[
-    AuthorsService
+    AuthorsService,
+    BooksService
   ],
   exports: [   
     NavtabsComponent,
