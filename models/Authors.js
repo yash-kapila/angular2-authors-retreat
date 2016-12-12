@@ -40,4 +40,14 @@ AuthorsSchema.methods.deleteAuthor = function(callback){
     }, callback);
 };
 
+AuthorsSchema.methods.updateAuthorDetails = function(callback){
+    return this.model('Author').update({
+        id: this.id
+    }, {
+        id: this.id,
+        name: this.name,
+        country: this.country
+    }, callback);
+}
+
 exports = module.exports = mongoose.model('Author', AuthorsSchema);
