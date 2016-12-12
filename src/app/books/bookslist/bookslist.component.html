@@ -1,0 +1,29 @@
+<div class="books-list-container">
+  <div class="books-list-header col-xs-12">
+    <h3> Books </h3>
+  </div>
+
+  <div class="books-list-body">
+    <div class="books-list-add-btn">
+      <button class="btn btn-default" (click)="addNewBook()"> 
+        ADD
+      </button>
+    </div>
+    <div class="books-list-filter row">
+      <div class="col-xs-12 col-sm-3">
+        <input type="text" placeholder="Filter.." [(ngModel)]="filterText" 
+          class="form-control">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="books-list-tile" *ngFor="let book of books | filterText: filterText">
+        <span class="books-list-tile-text">
+          {{ book.name }}
+        </span>
+        <span class="author-list-tile-icon" (click)="goToBookDetails(book)">
+          <i class="glyphicon glyphicon-play-circle"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
