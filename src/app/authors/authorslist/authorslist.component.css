@@ -27,3 +27,8 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+.author-list-filter{
+    margin-bottom: 15px;
+    margin-left: 0px;
+}
