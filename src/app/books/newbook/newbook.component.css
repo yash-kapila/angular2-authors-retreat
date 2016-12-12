@@ -1,1 +1,33 @@
+.new-book-header{
+    margin-bottom: 30px;
+}
 
+.book-detail-btn-group{
+    margin-top: 30px;
+}
+
+.book-detail-save-btn{
+    background-color: #D5002B;
+    color: #fff;
+    border: 1px solid #D5002B;
+    display: inline-block;
+    padding: 8px 15px;
+    margin-right: 10px;
+}
+
+.book-detail-cancel-btn{
+    background-color: #EFEDE9;
+    color: #2D373E;
+    border: 1px solid #EFEDE9;
+    display: inline-block;
+    padding: 8px 15px;
+    margin-right: 10px;
+}
+
+.book-detail-delete-btn{
+    background-color: #2D373E;
+    color: #fff;
+    border: 1px solid #2D373E;
+    display: inline-block;
+    padding: 8px 15px;
+}
