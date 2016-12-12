@@ -1,3 +1,31 @@
-<p>
-  newbook works!
-</p>
+<div class="new-book-container">
+  <div class="new-book-header col-xs-12">
+    <h3> New Book </h3>
+  </div>
+
+  <div class="new-book-body">
+    <div class="col-xs-12 col-sm-6 form-group">
+      <label>
+        Name
+      </label>
+      <input required type="text" class="form-control" [(ngModel)]="book.name">
+    </div>
+    <div class="col-xs-12 col-sm-6 form-group">
+      <label>
+        Genre
+      </label>
+      <input required type="text" class="form-control" [(ngModel)]="book.genre">
+    </div>
+
+    <div class="col-xs-12 col-sm-6 book-detail-btn-group">
+      <div [style.display]="block">
+        <button class="btn book-detail-save-btn" (click)="save()"> 
+          Save 
+        </button>
+        <button class="btn book-detail-cancel-btn" (click)="cancel()"> 
+          Cancel 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
