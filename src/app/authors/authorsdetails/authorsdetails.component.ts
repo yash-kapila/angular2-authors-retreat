@@ -20,7 +20,7 @@ export class AuthorsdetailsComponent implements OnInit {
   ) {
     // initialize this.author otherwise template ngModel would throw error
     this.author = new AuthorsModel();
-  }
+  };
 
   ngOnInit() {
     let id = this._activatedRoute.snapshot.params['id'];
@@ -31,28 +31,31 @@ export class AuthorsdetailsComponent implements OnInit {
         this.createAuthorCopyObject();
       }
     )
-  }
+  };
+
+  createAuthorCopyObject(): void{
+    this.authorCopy = Object.assign({}, this.author);
+  };
 
   cancel(): void{
     this.author = this.authorCopy;
     this.createAuthorCopyObject();
-  }
-
-  createAuthorCopyObject(): void{
-    this.authorCopy = Object.assign({}, this.author);
-  }
+  };
 
   save(): void{
-
-  }
+    this._authorsService.updateAuthor(this.author).subscribe(
+      data => {
+        this._router.navigate(['/authors']);
+      }
+    )
+  };
 
   delete(): void{
     this._authorsService.deleteAuthor(this.author.id).subscribe(
       data => {
-        console.log(data);
         this._router.navigate(['/authors']);
       }
     )
-  }
+  };
 
 }
