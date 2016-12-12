@@ -18,6 +18,22 @@ export class BookslistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this._booksService.getBooks().subscribe(
+      response => {
+        this.books = response;
+        this.books.sort(function(a,b){
+          return a.name.toUpperCase() > b.name.toUpperCase();
+        });
+      }
+    )
+  }
+
+  addNewBook(): void{
+    this._router.navigate(['/books', 'new']);
+  }
+
+  goToBookDetails(book): void{
+    this._router.navigate(['/books', book.id]);
   }
 
 }
