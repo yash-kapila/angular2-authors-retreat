@@ -1,6 +1,6 @@
 <div class="row navtabs-container">
   <div class="col-xs-4 col-sm-2 navtabs-row" *ngFor="let tabs of navigationOptions">
-    <a [routerLink]="tabs.link" class="navtabs-list-items"> 
+    <a [routerLink]="tabs.link" class="navtabs-list-items" routerLinkActive="active-tab"> 
       {{ tabs.name }}
     </a>
   </div>
