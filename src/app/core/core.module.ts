@@ -5,8 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { NavtabsComponent } from './navtabs/navtabs.component';
 import { ModalComponent } from './modal/modal.component';
+
 import { AuthorsService } from './services/authors.service';
 import { BooksService } from './services/books.service';
+import { UserprofileService } from './services/userprofile.service';
+import { AuthguardService } from './services/authguard.service';
 
 @NgModule({
   imports: [
@@ -20,7 +23,9 @@ import { BooksService } from './services/books.service';
   ],
   providers:[
     AuthorsService,
-    BooksService
+    BooksService,
+    UserprofileService,
+    AuthguardService
   ],
   exports: [   
     NavtabsComponent,
