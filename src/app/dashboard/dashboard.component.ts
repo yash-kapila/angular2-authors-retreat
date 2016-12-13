@@ -21,6 +21,9 @@ export class DashboardComponent implements OnInit {
     this._authorsService.getAuthors().subscribe(
       response => {
         this.authors = response;
+      },
+      error => {
+        console.log(error);
       } 
     );
   }
