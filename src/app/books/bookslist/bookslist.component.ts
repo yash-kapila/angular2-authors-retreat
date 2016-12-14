@@ -21,9 +21,7 @@ export class BookslistComponent implements OnInit {
     this._booksService.getBooks().subscribe(
       response => {
         this.books = response;
-        this.books.sort(function(a,b){
-          return a.name.toUpperCase() > b.name.toUpperCase();
-        });
+        this.books.sort((a,b) => a.name.toUpperCase().localeCompare(b.name.toUpperCase()));
       }
     )
   }
