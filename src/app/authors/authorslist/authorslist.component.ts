@@ -11,16 +11,20 @@ import { AuthorsService } from '../../core/services/authors.service';
 })
 export class AuthorslistComponent implements OnInit {
   authors: AuthorsModel[];
+  filterText: string;
 
   constructor(
     private _authorsService: AuthorsService,
     private _router: Router
-  ) { }
+  ) { 
+    this.filterText = "";
+  }
 
   ngOnInit() {
     this._authorsService.getAuthors().subscribe(
       response => {
         this.authors = response;
+        this.authors.sort((a,b) => a.name.toUpperCase().localeCompare(b.name.toUpperCase()));
       }
     )
   }
