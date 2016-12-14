@@ -13,6 +13,7 @@ import { BooksService } from './services/books.service';
 import { UserprofileService } from './services/userprofile.service';
 import { AuthguardService } from './services/authguard.service';
 import { SpinnerService } from './spinner/spinner.service';
+import { ModalService } from './modal/modal.service';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { SpinnerService } from './spinner/spinner.service';
     BooksService,
     UserprofileService,
     AuthguardService,
-    SpinnerService
+    SpinnerService,
+    ModalService
   ],
   exports: [   
     NavtabsComponent,
