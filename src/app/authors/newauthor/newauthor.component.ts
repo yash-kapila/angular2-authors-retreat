@@ -19,8 +19,7 @@ export class NewauthorComponent implements OnInit {
     this.author = new AuthorsModel();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   cancel(): void{
     this._router.navigate(['/authors']);
